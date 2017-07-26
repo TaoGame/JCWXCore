@@ -2,10 +2,10 @@
 using System.IO;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using Newtonsoft.Json.Serialization;
 
 namespace JCSoft.WX.Framework.Models.Requests
 {
-    [Serializable]
     public abstract class RequestMessage : WXMessage
     {
         public RequestMessage() { }

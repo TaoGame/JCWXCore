@@ -1,6 +1,7 @@
 ﻿using JCSoft.WX.Framework.Models.ApiResponses;
 using Newtonsoft.Json;
 using System;
+using JCSoft.WX.Framework.Models.Exceptions;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -11,15 +12,15 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         protected const string GETMETHOD = "GET";
         protected const string FILEMETHOD = "FILE";
 
-        internal abstract string Method { get; }
+        public abstract string Method { get; }
 
         protected abstract string UrlFormat { get; }
 
-        internal abstract string GetUrl();
+        public abstract string GetUrl();
 
         protected abstract bool NeedToken { get; }
 
-        internal virtual bool NotHasResponse
+        public virtual bool NotHasResponse
         {
             get
             {
@@ -27,11 +28,11 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             }
         }
 
-        internal virtual void Validate()
+        public virtual void Validate()
         {
             if (NeedToken && String.IsNullOrEmpty(AccessToken))
             {
-                throw new ArgumentNullException("AccessToken 为空或已过期");
+                throw new WXApiException(WXErrorCode.AccessTokenIsExpired, "AccessToken 为空或已过期");
             }
         }
 

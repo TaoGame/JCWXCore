@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JCSoft.Core.Net.Http\JCSoft.Core.Net.Http.csproj" />
+    <ProjectReference Include="..\JCSoft.WX.Framework.Models\JCSoft.WX.Framework.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5CA1F184-1464-4C25-8F2C-B8623278004D}"
 EndProject
@@ -9,13 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EB69294A-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{82C20AD7-DEC8-4CC1-B496-8B23FCB53D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCSoft.WX.Framework", "src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj", "{83DFAE1A-0F3F-4A70-A1E0-40F337759977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCSoft.WX.Framework", "src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj", "{83DFAE1A-0F3F-4A70-A1E0-40F337759977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCSoft.WX.FrameworkTest", "test\FrameworkTest\JCSoft.WX.FrameworkTest.csproj", "{02E12C60-5A19-42CE-A2C4-B3FFA4F9D4B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCSoft.WX.FrameworkTest", "test\FrameworkTest\JCSoft.WX.FrameworkTest.csproj", "{02E12C60-5A19-42CE-A2C4-B3FFA4F9D4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCSoft.WX.Framework.Models", "src\JCSoft.WX.Framework.Models\JCSoft.WX.Framework.Models.csproj", "{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCSoft.WX.Framework.Models", "src\JCSoft.WX.Framework.Models\JCSoft.WX.Framework.Models.csproj", "{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCSoft.Common.Http", "src\JCSoft.Common.Http\JCSoft.Common.Http.csproj", "{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "demo\DemoWeb\Web.csproj", "{5ACDBD1A-C871-4446-8082-386030463657}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCSoft.Core.Net.Http", "src\JCSoft.Core.Net.Http\JCSoft.Core.Net.Http.csproj", "{11F68532-1CA2-420B-9EE0-791122256193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +37,14 @@ Global
 		{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACDBD1A-C871-4446-8082-386030463657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACDBD1A-C871-4446-8082-386030463657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACDBD1A-C871-4446-8082-386030463657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACDBD1A-C871-4446-8082-386030463657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F68532-1CA2-420B-9EE0-791122256193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F68532-1CA2-420B-9EE0-791122256193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F68532-1CA2-420B-9EE0-791122256193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F68532-1CA2-420B-9EE0-791122256193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{83DFAE1A-0F3F-4A70-A1E0-40F337759977} = {5CA1F184-1464-4C25-8F2C-B8623278004D}
 		{02E12C60-5A19-42CE-A2C4-B3FFA4F9D4B0} = {EB69294A-C5D5-47EE-9AAD-64A31A3F2BAD}
 		{8537FC33-7E4B-4ABC-94AF-9E1E4C94E1AA} = {5CA1F184-1464-4C25-8F2C-B8623278004D}
-		{6F8EDA2D-06DB-40CA-9C9D-8B43D105A0EF} = {5CA1F184-1464-4C25-8F2C-B8623278004D}
+		{5ACDBD1A-C871-4446-8082-386030463657} = {82C20AD7-DEC8-4CC1-B496-8B23FCB53D96}
+		{11F68532-1CA2-420B-9EE0-791122256193} = {5CA1F184-1464-4C25-8F2C-B8623278004D}
 	EndGlobalSection
 EndGlobal
