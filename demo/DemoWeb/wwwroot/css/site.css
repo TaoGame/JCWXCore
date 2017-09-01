@@ -1,4 +1,4 @@
-﻿body {
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -10,35 +10,20 @@
     padding-right: 15px;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-/* buttons and links extension to use brackets: [ click me ] */
-.btn-bracketed::before {
-    display: inline-block;
-    content: "[";
-    padding-right: 0.5em;
-}
-
-.btn-bracketed::after {
-    display: inline-block;
-    content: "]";
-    padding-left: 0.5em;
-}
-
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
 }
 
 /* Hide/rearrange for smaller screens */
@@ -48,3 +33,17 @@ textarea {
         display: none;
     }
 }
+.navbar-nav.white li{
+    font-size:16px;
+    color:#ffffff;
+    line-height:20px;
+}
+
+.navbar-nav.white li span{
+    padding:15px 10px;
+    display:block;
+}
+    .navbar-nav.white li span input {
+        color:black;
+        font-size:14px;
+    }

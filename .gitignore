@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/demo/DemoWeb/out
+/demo/DemoWeb/Properties/PublishProfiles

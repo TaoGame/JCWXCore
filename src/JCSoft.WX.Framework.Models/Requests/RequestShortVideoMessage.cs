@@ -1,7 +1,7 @@
 ﻿using JCSoft.WX.Framework.Models.Requests;
 using System.Xml.Linq;
 
-namespace JCSoft.WX.Framework.Models.Request.Requests
+namespace JCSoft.WX.Framework.Models.Requests
 {
     /// <summary>
     /// 小视频消息
