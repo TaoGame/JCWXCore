@@ -25,8 +25,106 @@
     @RenderSection("css", required: false)
 </head>
 <body>
-    <div>
+    <div class="page-header-fixed">
+        <div class="header navbar navbar-inverse navbar-fixed-top">
+
+            <!-- BEGIN TOP NAVIGATION BAR -->
+
+            <div class="navbar-inner">
+
+                <div class="container-fluid">
+
+                    <!-- BEGIN LOGO -->
+
+                    <a class="brand" style="width:auto;" asp-page="/">
+
+                        WeiChat Quick Framework
+
+                    </a>
+
+                    <!-- END LOGO -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+                    <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+                        <img src="media/image/menu-toggler.png" alt="" />
+
+                    </a>
+
+                    <!-- END RESPONSIVE MENU TOGGLER -->
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <ul class="nav pull-right">
+
+                            <!-- BEGIN NOTIFICATION DROPDOWN -->
+
+
+                            <li class="dropdown user">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+
+
+                                    <span class="username">Hello Guy!</span>
+
+                                    <i class="icon-angle-down"></i>
+
+                                </a>
+
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="/loging"><i class="icon-user-md"></i> 切换公众号 </a></li>
+
+                                    <li><a href="/logout"><i class="icon-key"></i> 退出 </a></li>
+
+
+                                    <li class="divider"></li>
+                                    <li><a href="https://github.com/JamesYing/JCWXCore" target="_blank"><i class="icon-code"></i> 源码地址</a></li>
+
+                                    <li><a href="http://www.jamesying.com"><i class="icon-user"></i> 关于作者</a></li>
+
+                                    <li><a href="http://inday.cnblogs.com"><i class="icon-book"></i> 我的博客</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <!-- END USER LOGIN DROPDOWN -->
+
+                        </ul>
+                    }
+                    
+
+                    <!-- END TOP NAVIGATION MENU -->
+
+                </div>
+
+            </div>
+
+            <!-- END TOP NAVIGATION BAR -->
+
+        </div>
         @RenderBody()
+        <div class="footer">
+
+            <div class="footer-inner">
+
+                2017 &copy; JCSoft
+
+            </div>
+
+            <div class="footer-tools">
+
+                <span class="go-top">
+
+                    <i class="icon-angle-up"></i>
+
+                </span>
+
+            </div>
+
+        </div>
     </div>
     <script src="~/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
 
