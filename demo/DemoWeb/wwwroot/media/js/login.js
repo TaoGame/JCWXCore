@@ -35,17 +35,21 @@ var Login = function () {
 	                    .closest('.control-group').addClass('error'); // set error class to the control group
 	            },
 
-	            success: function (label) {
+                success: function (label) {
+                    $(".btn").removeAttr('disabled');
 	                label.closest('.control-group').removeClass('error');
 	                label.remove();
 	            },
 
-	            errorPlacement: function (error, element) {
+                errorPlacement: function (error, element) {
+                    $(".btn").removeAttr('disabled');
 	                error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
 	            },
 
                 submitHandler: function (form) {
-                    $(form).submit();
+                    $(".btn").attr('disabled', '');
+                    form.submit();
+                    //$(form).submit();
 	            }
 	        });
 
