@@ -47,3 +47,10 @@ body {
         color:black;
         font-size:14px;
     }
+.copybtn.icon-copy.white{
+    color:#fff;
+}
+
+.ace_editor {
+    height:350px;
+}

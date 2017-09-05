@@ -70,7 +70,8 @@ define.payloads = {};
 /**
  * Get at functionality define()ed using the function above
  */
-var _require = function(parentId, module, callback) {
+    var _require = function (parentId, module, callback) {
+        //console.log(module);
     if (typeof module === "string") {
         var payload = lookup(parentId, module);
         if (payload != undefined) {

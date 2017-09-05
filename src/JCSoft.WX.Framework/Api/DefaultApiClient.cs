@@ -17,7 +17,7 @@ namespace JCSoft.WX.Framework.Api
 
         public DefaultApiClient(ILoggerFactory loggerFactory, IHttpFactory factory)
         {
-            Logger = loggerFactory.CreateLogger<DefaultApiClient>();
+            Logger = loggerFactory?.CreateLogger<DefaultApiClient>();
             _factory = factory;
         }
 

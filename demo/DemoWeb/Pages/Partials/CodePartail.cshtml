@@ -1,0 +1,15 @@
+﻿
+@model CodePartailModel
+<div class="tab-pane" id="tab_@(Model.Index)">
+    <div class="portlet box grey">
+        <div class="portlet-title">
+            <div class="caption">示例代码</div>
+            <div class="tools">
+                <a class="copybtn icon-copy white" data-clipboard-acetarget="code_@(Model.Index)"></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="code_@(Model.Index)" class="aceEditor ace_editor ace-tm">@(Model.Code())</div>
+        </div>
+    </div>
+</div>
