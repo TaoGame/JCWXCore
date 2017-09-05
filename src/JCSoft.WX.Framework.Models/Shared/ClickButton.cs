@@ -53,5 +53,8 @@ namespace JCSoft.WX.Framework.Models
 
         [JsonProperty("pagePath", NullValueHandling = NullValueHandling.Ignore)]
         public string MiniProgramPagePath { get; set; }
+
+        [JsonProperty("media_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Media_Id { get; set; }
     }
 }

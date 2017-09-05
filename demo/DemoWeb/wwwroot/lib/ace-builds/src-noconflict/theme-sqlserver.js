@@ -1,6 +1,6 @@
 ace.define("ace/theme/sqlserver",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
 
-exports.isDark = false;
+exports.isDark = true;
 exports.cssClass = "ace-sqlserver";
 exports.cssText = ".ace-sqlserver .ace_gutter {\
 background: #ebebeb;\

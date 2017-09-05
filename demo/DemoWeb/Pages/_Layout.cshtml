@@ -939,19 +939,39 @@
 </div>
 @section Scripts{ 
 <script src="~/lib/ace-builds/src-noconflict/ace.js"></script>
+<script src="~/lib/ace-builds/src-noconflict/ext-beautify.js"></script>
+<script src="~/lib/clipboard/dist/clipboard.js"></script>
+<script src="~/lib/ace-builds/src-noconflict/theme-github.js"></script>
+<script src="~/lib/ace-builds/src-noconflict/theme-sqlserver.js"></script>
 @RenderSection("Scripts", required: false)
     <script >
+        //var beautify = ace.require("ace/ext/beautify");
+        ace.config.set('basePath', '/lib/ace-builds/src-noconflict');
+        ace.config.set('modePath', '/lib/ace-builds/src-noconflict');
+        ace.config.set('themePath', '/lib/ace-builds/src-noconflict');
         $(document).ready(function () {
-            var beautify = ace.require("ace/ext/beautify");
+            
             $(".aceEditor").each(function (index, ele) {
 
                 var editor = ace.edit(ele);
-                editor.setTheme("ace/theme/chrome");
+                editor.setTheme("ace/theme/sqlserver");
                 editor.getSession().setMode("ace/mode/csharp");
-                beautify.beautify(editor.getSession());
             });
 
+            var clipboard = new Clipboard('.copybtn', {
+                text: function (trigger) {
+                    var target = $(trigger).attr("data-clipboard-acetarget");
+                    if (target.length > 0) {
+                        var element = $(target);
+                        var editor = ace.edit(target);
+                        //editor.setTheme("ace/theme/sqlserver");
+                        //editor.getSession().setMode("ace/mode/csharp");
+                        return editor.getValue();
+                    }
 
+                    return "";
+                }
+            });
         });
     </script>  
 }

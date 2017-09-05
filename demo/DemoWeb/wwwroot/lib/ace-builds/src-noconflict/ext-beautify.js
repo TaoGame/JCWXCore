@@ -309,7 +309,8 @@ var TokenIterator = require("ace/token_iterator").TokenIterator;
 
 var phpTransform = require("./beautify/php_rules").transform;
 
-exports.beautify = function(session) {
+    exports.beautify = function (session) {
+        //console.log('a');
     var iterator = new TokenIterator(session, 0, 0);
     var token = iterator.getCurrentToken();
 
@@ -328,7 +329,7 @@ exports.commands = [{
 }]
 
 });
-                (function() {
-                    ace.require(["ace/ext/beautify"], function() {});
+(function () {
+    ace.require(["ace/ext/beautify"], function () { });
                 })();
             

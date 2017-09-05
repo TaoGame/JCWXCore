@@ -15,8 +15,11 @@ namespace DemoWeb.Pages
         {
         }
 
+        public string Code { get; set; }
+
         public void OnGet()
         {
+           
         }
     }
 }
