@@ -15,6 +15,7 @@ namespace JCSoft.WX.Framework.Api
         private readonly ILogger Logger;
         private readonly IHttpFactory _factory;
 
+
         public DefaultApiClient(ILoggerFactory loggerFactory, IHttpFactory factory)
         {
             Logger = loggerFactory?.CreateLogger<DefaultApiClient>();
@@ -42,7 +43,7 @@ namespace JCSoft.WX.Framework.Api
                     return new T();
                 }
 
-                Logger.LogError(ex.ToString());
+                Logger?.LogError(ex.ToString());
                 throw new WXApiException(WXErrorCode.GetResponseFaild, ex.ToString());
             }
         }

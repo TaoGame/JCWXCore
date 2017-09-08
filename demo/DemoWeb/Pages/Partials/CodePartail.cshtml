@@ -1,6 +1,6 @@
 ﻿
 @model CodePartailModel
-<div class="tab-pane" id="tab_@(Model.Index)">
+<div class="tab-pane @(Model.IsActive ? "active" : "")" id="tab_@(Model.Index)">
     <div class="portlet box grey">
         <div class="portlet-title">
             <div class="caption">示例代码</div>
@@ -11,5 +11,22 @@
         <div class="portlet-body">
             <div id="code_@(Model.Index)" class="aceEditor ace_editor ace-tm">@(Model.Code())</div>
         </div>
+        @if (Model.ShowTestButtons)
+        {
+            <div class="portlet-body">
+                <button class="btn blue btn-block" onclick="sendDemoCode(this, '@Model.Api');">发送测试代码</button>
+            </div>
+            <div class="portlet-body apiresult">
+                <div class="portlet-title">
+                    <div class="caption">测试结果</div>
+                </div>
+                <div class="portlet-body">
+                    <div class="search-result">
+                        
+                    </div>
+                </div>
+            </div>
+        }
+        
     </div>
 </div>

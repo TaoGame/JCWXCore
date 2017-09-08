@@ -1,7 +1,10 @@
 ﻿using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace JCSoft.Core.Net.Http.HttpActions
 {
@@ -10,9 +13,22 @@ namespace JCSoft.Core.Net.Http.HttpActions
 
         public HttpContent(HttpOptions options) : base(options) { }
 
-        public override string ToString()
+        public override async Task<string> DoGetResponseAsync()
         {
-            return $"this is a http Content, has headers:{HttpOptions.FileExtContentTypeDict.Count}, url:{Request.Url}, encoding:{Request.Encoding}, content : {Request.Content}";
+            using(var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = await client.PostAsync(Request.Url, new StringContent(Request.Content));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsStringAsync();
+                }
+
+                return String.Empty;
+            }
         }
     }
 }

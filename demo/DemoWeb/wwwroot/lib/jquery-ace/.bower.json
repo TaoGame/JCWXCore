@@ -1,0 +1,28 @@
+{
+  "name": "jquery-ace",
+  "version": "1.0.0",
+  "homepage": "https://github.com/SamMousa/jquery-ace",
+  "authors": [
+    "Sam <sam@mousa.nl>"
+  ],
+  "description": "jQuery wrapper for Ace Editor",
+  "main": "jquery.ace.js",
+  "keywords": [
+    "ace",
+    "jquery"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ace-builds": "~1.2.0"
+  },
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "ece8360e6027ead853bde01244d652de8488bba7"
+  },
+  "_source": "https://github.com/SamMousa/jquery-ace.git",
+  "_target": "v1.0.0",
+  "_originalSource": "jquery-ace",
+  "_direct": true
+}

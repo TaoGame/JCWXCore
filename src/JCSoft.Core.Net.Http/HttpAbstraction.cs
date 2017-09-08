@@ -43,9 +43,9 @@ namespace JCSoft.Core.Net.Http
                 throw new ArgumentNullException("Url is null!");
             }
 
-            return await DoGetResponse();
+            return await DoGetResponseAsync();
         }
 
-        public abstract Task<string> DoGetResponse();
+        public abstract Task<string> DoGetResponseAsync();
     }
 }

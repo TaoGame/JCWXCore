@@ -31,7 +31,7 @@ namespace DemoWeb
     }
 
     [Authorize]
-    public class LoginedPageModel : BasePageModel
+    public abstract class LoginedPageModel : BasePageModel
     {
         public LoginedPageModel(IMemoryCache cache, IApiClient client) : base(cache, client)
         {
@@ -61,5 +61,8 @@ namespace DemoWeb
             }
         }
 
+        public abstract int Index { get;}
+
+        public abstract int SubIndex { get; }
     }
 }

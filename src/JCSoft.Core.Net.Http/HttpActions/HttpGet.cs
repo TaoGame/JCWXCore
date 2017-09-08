@@ -10,7 +10,7 @@ namespace JCSoft.Core.Net.Http.HttpActions
     {
         public HttpGet(HttpOptions options) : base(options) { }
 
-        public override async Task<string> DoGetResponse()
+        public override async Task<string> DoGetResponseAsync()
         {
             HttpClient httpClient = new HttpClient();
             var data = await httpClient.GetByteArrayAsync(Request.Url);

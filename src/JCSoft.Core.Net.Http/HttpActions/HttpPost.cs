@@ -10,7 +10,7 @@ namespace JCSoft.Core.Net.Http.HttpActions
 
         public HttpPost(HttpOptions options) : base(options) { }
 
-        public override  Task<string> DoGetResponse()
+        public override  Task<string> DoGetResponseAsync()
         {
             throw new NotImplementedException();
         }

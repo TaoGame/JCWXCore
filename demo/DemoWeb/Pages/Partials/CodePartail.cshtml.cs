@@ -15,6 +15,10 @@ namespace DemoWeb.Pages.Partials
 
         public bool ShowTestButtons { get; set; }
 
+        public string Api { get; set; }
+
+        public bool IsActive { get; set; }
+
         public void OnGet()
         {
         }

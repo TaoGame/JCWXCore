@@ -51,11 +51,8 @@ namespace DemoWeb.Pages
                 if (!String.IsNullOrEmpty(ReturnUrl))
                     return Redirect(ReturnUrl);
 
-                return new ViewResult()
-                {
-                    ViewName = "~/Pages/About.cshtml"
-                };
-                //return Redirect("/");
+               
+                return Redirect("/");
             }
             else
             {

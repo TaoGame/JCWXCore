@@ -9,6 +9,10 @@ namespace DemoWeb.Pages
         {
         }
 
+        public override int Index => -1;
+
+        public override int SubIndex => -1;
+
         public void OnGet()
         {
             HttpContext?.SignOutAsync();
