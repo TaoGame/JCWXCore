@@ -1,5 +1,5 @@
 ﻿@page
-@model CustomerMenuCreateModel
+@model CustomMenuCreateModel
 @{
     ViewData["Title"] = "自定义菜单创建";
 }
@@ -25,7 +25,7 @@
 
                 </li>*@
 
-                <li><a href="#tab_1" data-toggle="tab"><i class="icon-plus"></i> 创建一个Click菜单</a></li>
+                <li><a href="#tab_1" data-toggle="tab"><i class="icon-plus active"></i> 创建一个Click菜单</a></li>
                 <li class=""><a href="#tab_2" data-toggle="tab"><i class="icon-plus"></i> 创建一个View菜单</a></li>
                 <li class=""><a href="#tab_3" data-toggle="tab"><i class="icon-plus"></i> 创建一个扫一扫菜单</a></li>
                 <li class=""><a href="#tab_4" data-toggle="tab"><i class="icon-plus"></i> 创建一个扫一扫等待菜单</a></li>
@@ -36,6 +36,7 @@
                 <li class=""><a href="#tab_9" data-toggle="tab"><i class="icon-plus"></i> 创建一个媒体素材菜单</a></li>
                 <li class=""><a href="#tab_10" data-toggle="tab"><i class="icon-plus"></i> 创建一个图文消息菜单</a></li>
                 <li class=""><a href="#tab_11" data-toggle="tab"><i class="icon-plus"></i> 创建一个小程序菜单</a></li>
+                <li class=""><a href="#tab_12" data-toggle="tab"><i class="icon-plus"></i> 创建一个一组菜单</a></li>
             </ul>
 
         </div>
@@ -48,6 +49,7 @@
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
            {
                Index = 1,
+               IsActive = true,
                Code = () =>
                {
                    return @"
@@ -62,8 +64,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -83,8 +85,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -104,8 +106,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -125,8 +127,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -146,8 +148,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }})
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
            {
@@ -166,8 +168,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -187,8 +189,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -208,8 +210,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -229,8 +231,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -250,8 +252,8 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
                }
            })
                 @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
@@ -273,8 +275,78 @@ var request = new MenuCreateRequest
         }
     }
 };
-IApiClient api = new DefaultApiClient();
-var response = m_client.Execute(request);";
+
+var response = _clientExecute(request);";
+               }
+           })
+                @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
+           {
+               Index = 12,
+               ShowTestButtons = true,
+               Api = "/api/menucreate",
+               Code = () =>
+               {
+                   return @"
+
+var request = new MenuCreateRequest
+{
+    Buttons = new List<ClickButton>
+    {
+        new ClickButton
+        {
+            Type = ClickButtonType.click,
+            Name = ""关注我"",
+            Key = ""Key_Follow_Me""
+        },
+        new ClickButton
+        {
+            Type = ClickButtonType.view,
+            Url = ""http://inday.cnblogs.com"",
+            Name = ""我的博客""
+        },
+        new ClickButton
+        {
+            Name=""主菜单"",
+            SubButton = new List<ClickButton>
+            {
+                new ClickButton
+                {
+                    Type = ClickButtonType.scancode_push,
+                    Name = ""扫一扫"",
+                    Key = ""Event_Scan""
+                },
+                new ClickButton
+                {
+                    Type = ClickButtonType.pic_sysphoto,
+                    Name = ""系统拍照发图"",
+                    Key = ""Event_SysPhoto""
+                },
+                new ClickButton
+                {
+                    Type = ClickButtonType.pic_weixin,
+                    Name = ""微信相册发图"",
+                    Key = ""Event_Pic_WeiXin""
+                },
+                new ClickButton
+                {
+                    Type = ClickButtonType.location_select,
+                    Name = ""发送位置"",
+                    Key = ""Event_Location_Select""
+                },
+                new ClickButton
+                {
+                    Type = ClickButtonType.miniprogram,
+                    Name = ""我的小程序"",
+                    Url =""http://inday.cnblogs.com"",
+                    MiniProgramAppId = ""wx286b93c14bbf93aa"",
+                    MiniProgramPagePath = ""pages/lunar/index""
+                }
+            }
+        }
+    }
+};
+
+var response = _clientExecute(request);";
                }
            })
             </div>
@@ -284,4 +356,55 @@ var response = m_client.Execute(request);";
         <!--end span9-->
 
     </div>
+</div>
+<div class="row-fluid">
+
+    <div class="span12 ">
+
+        <!-- BEGIN Portlet PORTLET-->
+
+        <div class="portlet red box">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>注意</div>
+
+                
+
+            </div>
+
+            <div class="portlet-body">
+
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
+                    <div class="scroller" data-height="200px" style="overflow: hidden; width: auto; height: 200px;">
+
+                        <p>
+
+                            1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+
+                        </p>
+
+                        <p>
+
+                            2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。
+
+                        </p>
+
+                        <p>
+
+                            3、创建自定义菜单后，菜单的刷新策略是，在用户进入公众号会话页或公众号profile页时，如果发现上一次拉取菜单的请求在5分钟以前，就会拉取一下菜单，如果菜单有更新，就会刷新客户端的菜单。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。
+
+                        </p>
+
+                    </div><div class="slimScrollBar ui-draggable" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 148.148px; background: rgb(161, 178, 189);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- END Portlet PORTLET-->
+
+    </div>
+
 </div>
