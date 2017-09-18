@@ -1,0 +1,26 @@
+﻿@page
+@model CustomMenuDeleteModel
+@{
+}
+<div class="row-fluid">
+    <h3 class="page-title">@ViewData["Title"]</h3>
+</div>
+<div class="row-fluid">
+    @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
+{
+    Index = 1,
+    IsActive = true,
+    ShowTestButtons = true,
+    Api = "/api/menudelete",
+    Code = () =>
+    {
+        return @"
+var request = new MenuDeleteRequest
+{
+    AccessToken = AccessToken
+};
+
+var response = _clientExecute(request);";
+    }
+})
+</div>

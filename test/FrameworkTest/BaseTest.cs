@@ -25,12 +25,12 @@ namespace FrameworkCoreTest
             var factory = new HttpFactory();
             var logger = new MockLogger();
             var mockLogger = new Mock<ILogger>();
-            mock_client = new Mock<DefaultApiClient>(logger, factory);
+            mock_client = new Mock<IApiClient>();
         }
 
         //protected IApiClient m_client = new DefaultApiClient();
 
-        protected Mock<DefaultApiClient> mock_client = null;
+        protected Mock<IApiClient> mock_client = null;
 
        // protected Mock<ILogger> mock_logger = new Mock<ILogger>();
 

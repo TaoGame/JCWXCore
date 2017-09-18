@@ -11,28 +11,7 @@ namespace FrameworkCoreTest
 {
     public class CustomeServiceGetRecordTest : MockPostApiBaseTest<CustomServiceGetRecordRequest, CustomServiceGetRecordResponse>
     {
-        [Fact]
-        public void MockCustomServiceGetRecordTest()
-        {
-            MockSetup(false);
-            var response = mock_client.Object.Execute(this.Request);
-            Assert.Equal(false, response.IsError);
-            Assert.Equal(2, response.RecordList.Count());
-            foreach (var r in response.RecordList)
-            {
-                Console.WriteLine("{0}:{1}", r.Worker, r.Text);
-            }
-        }
-
-        [Fact]
-        public void MockCustomServiceGetRecordErrorTest()
-        {
-            MockSetup(true);
-            var response = mock_client.Object.Execute(this.Request);
-            Assert.Equal(true, response.IsError);
-            Console.WriteLine(response.ToString());
-        }
-
+        
         protected override CustomServiceGetRecordRequest InitRequestObject()
         {
             return new CustomServiceGetRecordRequest
