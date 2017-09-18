@@ -1,6 +1,7 @@
 ﻿using JCSoft.WX.Framework.Api;
 using JCSoft.WX.Framework.Models;
 using JCSoft.WX.Framework.Models.ApiRequests;
+using JCSoft.WX.Framework.Models.ApiResponses;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,16 @@ using System.Threading.Tasks;
 namespace DemoWeb.Controllers
 {
     [Route("api/menuCreate")]
-    public class MenuCreateController : BaseController
+    public class MenuCreateController : BaseApiController<MenuCreateResponse>
     {
         public MenuCreateController(IApiClient client) : base(client)
         {
         }
 
-        public JsonResult Get()
+
+        protected override ApiRequest<MenuCreateResponse> GetApiRequest()
         {
-            var request = new MenuCreateRequest
+            return new MenuCreateRequest
             {
                 Buttons = new List<ClickButton>
                 {
@@ -68,10 +70,6 @@ namespace DemoWeb.Controllers
                 },
                 AccessToken = AccessToken
             };
-
-            var response = _client.Execute(request);
-
-            return new JsonResult(response);
         }
     }
 }

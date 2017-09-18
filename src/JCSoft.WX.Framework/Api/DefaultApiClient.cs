@@ -37,7 +37,7 @@ namespace JCSoft.WX.Framework.Api
             }
             catch (Exception ex)
             {
-                
+
                 if (request.NotHasResponse)
                 {
                     return new T();
@@ -48,7 +48,7 @@ namespace JCSoft.WX.Framework.Api
             }
         }
 
-        public virtual async Task<string> DoExecute<T>(ApiRequest<T> request) 
+        public virtual async Task<string> DoExecute<T>(ApiRequest<T> request)
             where T : ApiResponse
         {
             try
@@ -70,6 +70,13 @@ namespace JCSoft.WX.Framework.Api
                     case "XML":
                         http = _factory.CreateHttp(HttpRequestActionType.Xml);
                         break;
+                }
+
+                if (request.Method.Equals("GET", StringComparison.OrdinalIgnoreCase))
+                {
+                    return await http.Setup()
+                    .SetUrl(url)
+                    .GetResponseAsync();
                 }
 
                 return await http.Setup()

@@ -9,13 +9,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\JCSoft.Core.Net.Http\JCSoft.Core.Net.Http.csproj" />
     <ProjectReference Include="..\..\src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj" />
     <ProjectReference Include="..\..\src\JCSoft.WX.Mvc.Cores\JCSoft.WX.Mvc.Cores.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Codes\Filters\" />
-    <Folder Include="Pages\Partials\" />
   </ItemGroup>
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1Development_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
 </Project>
