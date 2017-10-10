@@ -2,25 +2,23 @@
 using Newtonsoft.Json;
 using System;
 using JCSoft.WX.Framework.Models.Exceptions;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
     public abstract class ApiRequest<T>
         where T : ApiResponse
     {
-        protected const string POSTMETHOD = "POST";
-        protected const string GETMETHOD = "GET";
-        protected const string FILEMETHOD = "FILE";
 
-        public abstract string Method { get; }
+        internal abstract HttpRequestActionType Method { get; }
 
         protected abstract string UrlFormat { get; }
 
-        public abstract string GetUrl();
+        internal abstract string GetUrl();
 
         protected abstract bool NeedToken { get; }
 
-        public virtual bool NotHasResponse
+        internal virtual bool NotHasResponse
         {
             get
             {
@@ -44,6 +42,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         [JsonIgnore]
         public string AccessToken { get; set; }
 
-        public abstract string GetPostContent();
+
+        internal abstract string GetPostContent();
     }
 }

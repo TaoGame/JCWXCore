@@ -55,24 +55,10 @@ namespace JCSoft.WX.Framework.Api
             {
                 var url = request.GetUrl();
                 var result = String.Empty;
-                HttpAbstraction http = null;
-                switch (request.Method)
-                {
-                    case "FILE":
-                        http = _factory.CreateHttp(HttpRequestActionType.File);
-                        break;
-                    case "POST":
-                        http = _factory.CreateHttp(HttpRequestActionType.Content);
-                        break;
-                    case "GET":
-                        http = _factory.CreateHttp(HttpRequestActionType.Get);
-                        break;
-                    case "XML":
-                        http = _factory.CreateHttp(HttpRequestActionType.Xml);
-                        break;
-                }
+                HttpAbstraction http = _factory.CreateHttp(request.Method);
 
-                if (request.Method.Equals("GET", StringComparison.OrdinalIgnoreCase))
+
+                if (request.Method == HttpRequestActionType.Get)
                 {
                     return await http.Setup()
                     .SetUrl(url)

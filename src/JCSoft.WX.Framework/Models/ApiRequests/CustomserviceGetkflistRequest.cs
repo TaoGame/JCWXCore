@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
 
     public class CustomserviceGetkflistRequest : ApiRequest<CustomserviceGetkflistResponse>
     {
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return GETMETHOD; }
+            get { return HttpRequestActionType.Get; }
         }
 
         protected override string UrlFormat
@@ -20,7 +21,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token={0}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken);
         }
@@ -30,7 +31,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return JsonConvert.SerializeObject(this);
         }

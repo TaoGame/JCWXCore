@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -36,9 +37,9 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             }
         }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return POSTMETHOD; }
+            get { return HttpRequestActionType.Content; }
         }
 
         protected override string UrlFormat
@@ -46,7 +47,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/merchant/order/getbyfilter?access_token={0}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken);
         }
@@ -56,7 +57,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return JsonConvert.SerializeObject(this);
         }

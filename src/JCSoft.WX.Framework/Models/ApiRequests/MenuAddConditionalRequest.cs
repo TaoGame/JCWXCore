@@ -1,4 +1,5 @@
-﻿using JCSoft.WX.Framework.Models.ApiResponses;
+﻿using JCSoft.Core.Net.Http;
+using JCSoft.WX.Framework.Models.ApiResponses;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,18 +16,18 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         {
         }
 
-        public override string Method => "POST";
+        internal override HttpRequestActionType Method => HttpRequestActionType.Content;
 
         protected override string UrlFormat => "https://api.weixin.qq.com/cgi-bin/menu/addconditional?access_token={0}";
 
         protected override bool NeedToken => true;
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return JsonConvert.SerializeObject(this);
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken);
         }

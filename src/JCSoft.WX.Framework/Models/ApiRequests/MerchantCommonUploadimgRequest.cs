@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -12,17 +13,14 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         public string FileName { get; set; }
 
-        public override string Method
-        {
-            get { return FILEMETHOD; }
-        }
+        internal override HttpRequestActionType Method => HttpRequestActionType.File;
 
         protected override string UrlFormat
         {
             get { return "https://api.weixin.qq.com/merchant/common/upload_img?access_token={0}&filename={1}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken, FileName);
         }
@@ -32,7 +30,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return FilePath;
         }

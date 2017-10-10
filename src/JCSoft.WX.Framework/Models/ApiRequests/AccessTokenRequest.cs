@@ -1,4 +1,5 @@
-﻿using JCSoft.WX.Framework.Models.ApiResponses;
+﻿using JCSoft.Core.Net.Http;
+using JCSoft.WX.Framework.Models.ApiResponses;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,9 +15,9 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         public AppIdentication AppIdentity { get; set; }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return "GET"; }
+            get { return HttpRequestActionType.Get; }
         }
 
         protected override string UrlFormat
@@ -24,7 +25,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AppIdentity.AppID, AppIdentity.AppSecret);
         }
@@ -42,7 +43,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return String.Empty;
         }
