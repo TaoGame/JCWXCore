@@ -11,7 +11,7 @@ namespace FrameworkCoreTest
         [Fact]
         public void GroupsUpdateRequestJsonTest()
         {
-            Console.WriteLine(Request.GetPostContent());
+            //Console.WriteLine(Request.GetPostContent());
         }
 
         [Fact]

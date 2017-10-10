@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -16,9 +17,9 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         private string LangString { get; set; }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return "GET"; }
+            get { return HttpRequestActionType.Get; }
         }
 
         protected override string UrlFormat
@@ -26,7 +27,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}&lang={2}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, OAuthToken, OpenId, LangString);
         }
@@ -36,7 +37,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return false; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return String.Empty;
         }

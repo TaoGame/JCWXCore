@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -15,14 +16,14 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         [JsonProperty("end_date")]
         public string EndDate { get; set; }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return POSTMETHOD; }
+            get { return HttpRequestActionType.Content; }
         }
 
         protected abstract override string UrlFormat { get; }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken);
         }
@@ -32,7 +33,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return JsonConvert.SerializeObject(this);
         }

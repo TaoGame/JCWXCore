@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -21,9 +22,9 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         public MediaType MediaType { get; set; }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return "FILE"; }
+            get { return HttpRequestActionType.File; }
         }
 
         protected override string UrlFormat
@@ -31,7 +32,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={0}&type={1}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken, MediaType);
         }
@@ -41,7 +42,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             return FilePath;
         }

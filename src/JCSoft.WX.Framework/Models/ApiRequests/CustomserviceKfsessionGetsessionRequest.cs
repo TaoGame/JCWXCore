@@ -18,7 +18,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/customservice/kfsession/getsession?access_token={0}&openid={1}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken, OpenId);
         }

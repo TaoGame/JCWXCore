@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JCSoft.WX.Framework.Models.ApiResponses;
+using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
@@ -12,9 +13,9 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         [JsonProperty("next_openid")]
         public string NextOpenId { get; set; }
 
-        public override string Method
+        internal override HttpRequestActionType Method
         {
-            get { return "GET"; }
+            get { return HttpRequestActionType.Get; }
         }
 
         protected override string UrlFormat
@@ -22,7 +23,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return "https://api.weixin.qq.com/cgi-bin/user/get?access_token={0}&next_openid={1}"; }
         }
 
-        public override string GetUrl()
+        internal override string GetUrl()
         {
             return String.Format(UrlFormat, AccessToken, NextOpenId);
         }
@@ -32,7 +33,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
             get { return true; }
         }
 
-        public override string GetPostContent()
+        internal override string GetPostContent()
         {
             throw new NotImplementedException();
         }
