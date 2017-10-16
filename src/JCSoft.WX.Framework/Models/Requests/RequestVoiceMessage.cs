@@ -6,9 +6,9 @@ namespace JCSoft.WX.Framework.Models.Requests
     {
         public RequestVoiceMessage(XElement xml):base(xml)
         {
-            this.MediaId = xml.Element("MediaId").Value;
-            this.Format = xml.Element("Format").Value;
-            this.Recognition = xml.Element("Recognition").Value;
+            this.MediaId = xml.Element("MediaId").GetValue();
+            this.Format = xml.Element("Format").GetValue();
+            this.Recognition = xml.Element("Recognition").GetValue();
         }
 
         public override MsgType MsgType

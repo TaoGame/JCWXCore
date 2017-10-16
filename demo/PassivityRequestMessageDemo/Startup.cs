@@ -26,12 +26,18 @@ namespace PassivityRequestMessageDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<WXOptions>(Configuration);
             services.Configure<MvcOptions>(options =>
             {
-                options.InputFormatters.Add(new WechatXmlSerializerInputFormatter());
+                options.InputFormatters.Add(new WechatXmlSerializerInputFormatter(
+                        Configuration.GetValue<string>("Token"),
+                        Configuration.GetValue<string>("EncodingAESKey"),
+                        Configuration.GetValue<string>("AppId"),
+                        Configuration.GetValue<MessageMode>("MessageMode")
+                    ));
             });
 
-            services.Configure<WXOptions>(Configuration);
+
             services.AddWXFramework();
             services.AddMvc();
         }

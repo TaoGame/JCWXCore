@@ -9,7 +9,7 @@ namespace JCSoft.WX.Framework.Models.Requests
     {
         public EncryptRequestMessage(XElement xml) : base(xml)
         {
-            EncryptMessage = xml.Element("Encrypt").Value;
+            EncryptMessage = xml.Element("Encrypt").GetValue();
         }
 
         public string EncryptMessage { get; set; }

@@ -24,7 +24,7 @@ namespace JCSoft.WX.Framework.Models.Requests
 
         private static RequestMessage RequestMessageByMsgType(XElement xml)
         {
-            var msgTypeString = xml.Element("MsgType").Value;
+            var msgTypeString = xml.Element("MsgType").GetValue();
             MsgType msgType = MsgType.Text;
             if (Enum.TryParse<MsgType>(msgTypeString, true, out msgType))
             {
@@ -59,7 +59,7 @@ namespace JCSoft.WX.Framework.Models.Requests
 
         private static RequestMessage IsEncryptMessage(XElement xml)
         {
-            if (!String.IsNullOrEmpty(xml.Element("Encrypt").Value))
+            if (!String.IsNullOrEmpty(xml.Element("Encrypt").GetValue()))
             {
                 return new EncryptRequestMessage(xml);
             }
@@ -69,7 +69,7 @@ namespace JCSoft.WX.Framework.Models.Requests
 
         private static RequestEventMessage EventRequestMessageByEventType(XElement xml)
         {
-            var eventTypeString = xml.Element("Event").Value;
+            var eventTypeString = xml.Element("Event").GetValue();
             var eventType = Event.Subscribe;
             if (Enum.TryParse<Event>(eventTypeString, true, out eventType))
             {

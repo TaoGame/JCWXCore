@@ -7,8 +7,8 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestVideoMessage(XElement xml)
             : base(xml)
         {
-            this.MediaId = xml.Element("MediaId").Value;
-            this.ThumbMediaId = xml.Element("ThumbMediaId").Value;
+            this.MediaId = xml.Element("MediaId").GetValue();
+            this.ThumbMediaId = xml.Element("ThumbMediaId").GetValue();
         }
 
         public override MsgType MsgType
