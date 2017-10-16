@@ -7,9 +7,9 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestLinkMessage(XElement xml)
             : base(xml)
         {
-            this.Title = xml.Element("Title").Value;
-            this.Description = xml.Element("Description").Value;
-            this.Url = xml.Element("Url").Value;
+            this.Title = xml.Element("Title").GetValue();
+            this.Description = xml.Element("Description").GetValue();
+            this.Url = xml.Element("Url").GetValue();
         }
 
         public override MsgType MsgType

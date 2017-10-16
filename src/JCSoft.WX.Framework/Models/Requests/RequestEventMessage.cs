@@ -8,7 +8,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestEventMessage(XElement xml)
             : base(xml)
         {
-            this.Event = (Event)Enum.Parse(typeof(Event), xml.Element("Event").Value, true);
+            this.Event = (Event)Enum.Parse(typeof(Event), xml.Element("Event").GetValue(), true);
         }
 
         public Event Event { get; set; }

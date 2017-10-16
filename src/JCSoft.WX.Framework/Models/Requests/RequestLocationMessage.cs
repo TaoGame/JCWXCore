@@ -7,10 +7,10 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestLocationMessage(XElement xml)
             : base(xml)
         {
-            this.Location_X = float.Parse(xml.Element("Location_X").Value);
-            this.Location_Y = float.Parse(xml.Element("Location_Y").Value);
-            this.Scale = int.Parse(xml.Element("Scale").Value);
-            this.Label = xml.Element("Label").Value;
+            this.Location_X = float.Parse(xml.Element("Location_X").GetValue());
+            this.Location_Y = float.Parse(xml.Element("Location_Y").GetValue());
+            this.Scale = int.Parse(xml.Element("Scale").GetValue());
+            this.Label = xml.Element("Label").GetValue();
         }
 
         public string Label { get; set; }

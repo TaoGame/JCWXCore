@@ -7,12 +7,12 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestMassSendEventMessage(XElement xml)
             : base(xml)
         {
-            MsgId = long.Parse(xml.Element("MsgID").Value);
-            Status = xml.Element("Status").Value;
-            TotalCount = int.Parse(xml.Element("TotalCount").Value);
-            FilterCount = int.Parse(xml.Element("FilterCount").Value);
-            SentCount = int.Parse(xml.Element("SentCount").Value);
-            ErrorCount = int.Parse(xml.Element("ErrorCount").Value);
+            MsgId = long.Parse(xml.Element("MsgID").GetValue());
+            Status = xml.Element("Status").GetValue();
+            TotalCount = int.Parse(xml.Element("TotalCount").GetValue());
+            FilterCount = int.Parse(xml.Element("FilterCount").GetValue());
+            SentCount = int.Parse(xml.Element("SentCount").GetValue());
+            ErrorCount = int.Parse(xml.Element("ErrorCount").GetValue());
         }
 
         public string Status { get; set; }

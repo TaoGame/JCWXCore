@@ -17,9 +17,20 @@ namespace PassivityRequestMessageDemo
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .AddJsonFile("hosts.json", optional: true)
+                .Build();
+
+            return WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(config)
+                .UseUrls("http://*:30001")
                 .UseStartup<Startup>()
                 .Build();
+        }
+
+            
     }
 }

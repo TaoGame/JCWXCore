@@ -7,8 +7,8 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestImageMessage(XElement xml)
             : base(xml)
         {
-            this.PicUrl = xml.Element("PicUrl").Value;
-            this.MediaId = xml.Element("MediaId").Value;
+            this.PicUrl = xml.Element("PicUrl").GetValue();
+            this.MediaId = xml.Element("MediaId").GetValue();
         }
 
         public override MsgType MsgType

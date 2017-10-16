@@ -29,10 +29,10 @@ namespace DemoWeb
         {
            // services.AddHttpService();
 
-            services.Configure<MvcOptions>(options =>
-            {
-                options.InputFormatters.Add(new WechatXmlSerializerInputFormatter());
-            });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.InputFormatters.Add(new WechatXmlSerializerInputFormatter());
+            //});
 
             services.AddWXFramework();
             services.AddMemoryCache();

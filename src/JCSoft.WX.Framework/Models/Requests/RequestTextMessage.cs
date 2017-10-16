@@ -15,7 +15,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestTextMessage(XElement xml)
             : base(xml)
         {
-            this.Content = xml.Element("Content").Value;
+            this.Content = xml.Element("Content").GetValue();
         }
 
         public override MsgType MsgType

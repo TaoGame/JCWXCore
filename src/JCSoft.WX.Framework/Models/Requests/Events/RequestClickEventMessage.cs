@@ -7,7 +7,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestClickEventMessage(XElement xml)
             : base(xml)
         {
-            EventKey = xml.Element("EventKey").Value;     
+            EventKey = xml.Element("EventKey").GetValue();     
         }
 
         public string EventKey { get; set; }

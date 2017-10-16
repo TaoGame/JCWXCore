@@ -8,10 +8,10 @@ namespace JCSoft.WX.Framework.Models.Request.Requests
         public RequestOrderEventMessage(XElement xml)
             : base(xml)
         {
-            OrderId = xml.Element("OrderId").Value;
-            OrderStatus = int.Parse(xml.Element("OrderStatus").Value);
-            ProductId = xml.Element("ProductId").Value;
-            SkuInfo = xml.Element("SkuInfo").Value;
+            OrderId = xml.Element("OrderId").GetValue();
+            OrderStatus = int.Parse(xml.Element("OrderStatus").GetValue());
+            ProductId = xml.Element("ProductId").GetValue();
+            SkuInfo = xml.Element("SkuInfo").GetValue();
         }
 
         public string OrderId { get; set; }

@@ -8,7 +8,7 @@ namespace JCSoft.WX.Framework.Models.Request.Requests
         public RequestTemplateEventMessage(XElement xml)
             : base(xml)
         {
-            this.Status = xml.Element("Status").Value;
+            this.Status = xml.Element("Status").GetValue();
         }
 
 

@@ -12,10 +12,10 @@ namespace JCSoft.WX.Framework.Models.Requests
 
         public RequestMessage(XElement xml)
         {
-            this.FromUserName = xml.Element("FromUserName").Value;
-            this.ToUserName = xml.Element("ToUserName").Value;
-            this.CreateTime = Int64.Parse(xml.Element("CreateTime").Value);
-            this.MsgId = xml.Element("MsgId") != null ? Int64.Parse(xml.Element("MsgId").Value) : 0;
+            this.FromUserName = xml.Element("FromUserName").GetValue();
+            this.ToUserName = xml.Element("ToUserName").GetValue();
+            this.CreateTime = Int64.Parse(xml.Element("CreateTime").GetValue());
+            this.MsgId = xml.Element("MsgId") != null ? Int64.Parse(xml.Element("MsgId").GetValue()) : 0;
         }
 
         public static T Deserializ<T>(Stream stream)

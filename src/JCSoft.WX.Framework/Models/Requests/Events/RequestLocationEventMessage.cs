@@ -7,9 +7,9 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestLocationEventMessage(XElement xml)
             : base(xml)
         {
-            Latitude = float.Parse(xml.Element("Latitude").Value);
-            Longitude = float.Parse(xml.Element("Longitude").Value);
-            Precision = float.Parse(xml.Element("Precision").Value);
+            Latitude = float.Parse(xml.Element("Latitude").GetValue());
+            Longitude = float.Parse(xml.Element("Longitude").GetValue());
+            Precision = float.Parse(xml.Element("Precision").GetValue());
         }
 
         /// <summary>

@@ -13,18 +13,19 @@ using Microsoft.Extensions.Options;
 using JCSoft.WX.Framework.Extensions;
 using JCSoft.WX.Framework.Common;
 using System.Xml;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace JCSoft.WX.Mvc.Formatters
 {
     public class WechatXmlSerializerInputFormatter : XmlSerializerInputFormatter
     {
-        private readonly WXOptions _options;
         private readonly CryptRequestMessage _crypt;
-        public WechatXmlSerializerInputFormatter()
+        private MessageMode _messageMode;
+        public WechatXmlSerializerInputFormatter(string token, string aesKey, string appId, MessageMode mode)
             : base()
         {
             
-            _crypt = new CryptRequestMessage(_options?.Token, _options?.EncodingAESKey, _options?.AppId);
+            _crypt = new CryptRequestMessage(token, aesKey, appId);
 
         }
 
@@ -57,7 +58,7 @@ namespace JCSoft.WX.Mvc.Formatters
                 {
                     var inputRequestMessage = RequestMessageFactory.CreateRequestMessage(xmlReader);
 
-                    if((_options.MessageMode == MessageMode.Cipher || _options.MessageMode == MessageMode.Compatible) && 
+                    if((_messageMode == MessageMode.Cipher || _messageMode == MessageMode.Compatible) && 
                         inputRequestMessage is EncryptRequestMessage)
                     {
                         var encryptMessage = inputRequestMessage as EncryptRequestMessage;

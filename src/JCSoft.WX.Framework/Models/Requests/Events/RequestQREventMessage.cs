@@ -7,8 +7,8 @@ namespace JCSoft.WX.Framework.Models.Requests
         public RequestQREventMessage(XElement xml)
             : base(xml)
         {
-            this.EventKey = xml.Element("EventKey").Value;
-            this.Ticket = xml.Element("Ticket").Value;
+            this.EventKey = xml.Element("EventKey").GetValue();
+            this.Ticket = xml.Element("Ticket").GetValue();
         }
 
         public string EventKey { get; set; }
