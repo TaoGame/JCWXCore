@@ -24,7 +24,7 @@ namespace JCSoft.WX.Mvc.Formatters
         public WechatXmlSerializerInputFormatter(string token, string aesKey, string appId, MessageMode mode)
             : base()
         {
-            
+            _messageMode = mode;
             _crypt = new CryptRequestMessage(token, aesKey, appId);
 
         }
@@ -67,12 +67,12 @@ namespace JCSoft.WX.Mvc.Formatters
                         var sTimeStamp = context.HttpContext.Request.Query["timestamp"];
                         var sNonce = context.HttpContext.Request.Query["nonce"];
                         var ret = _crypt.DecryptMsg(sMsgSignature, sTimeStamp, sNonce, encryptMessage.EncryptMessage, ref plainMessage);
-                        if(ret > 0)
+                        if(ret == 0)
                         {
                             using(var stringStream = new MemoryStream(Encoding.UTF8.GetBytes(plainMessage)))
                             using (var stringReader = XmlReader.Create(stringStream))
                             {
-                                inputRequestMessage = RequestMessageFactory.CreateRequestMessage(xmlReader);
+                                inputRequestMessage = RequestMessageFactory.CreateRequestMessage(stringReader);
                             }
                         }
                     }

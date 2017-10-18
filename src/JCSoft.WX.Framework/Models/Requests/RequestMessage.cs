@@ -14,7 +14,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         {
             this.FromUserName = xml.Element("FromUserName").GetValue();
             this.ToUserName = xml.Element("ToUserName").GetValue();
-            this.CreateTime = Int64.Parse(xml.Element("CreateTime").GetValue());
+            this.CreateTime = xml.Element("CreateTime") != null ? Int64.Parse(xml.Element("CreateTime").Value) : 0 ;
             this.MsgId = xml.Element("MsgId") != null ? Int64.Parse(xml.Element("MsgId").GetValue()) : 0;
         }
 

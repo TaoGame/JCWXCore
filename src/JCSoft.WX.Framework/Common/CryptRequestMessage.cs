@@ -54,27 +54,27 @@ namespace JCSoft.WX.Framework.Common
             }
             XmlDocument doc = new XmlDocument();
             XmlNode root;
-            string sEncryptMsg;
-            try
-            {
-                doc.LoadXml(sPostData);
-                root = doc.FirstChild;
-                sEncryptMsg = root["Encrypt"].InnerText;
-            }
-            catch (Exception)
-            {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ParseXml_Error;
-            }
+            //string sEncryptMsg;
+            //try
+            //{
+            //    doc.LoadXml(sPostData);
+            //    root = doc.FirstChild;
+            //    sEncryptMsg = root["Encrypt"].InnerText;
+            //}
+            //catch (Exception)
+            //{
+            //    return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ParseXml_Error;
+            //}
             //verify signature
             int ret = 0;
-            ret = VerifySignature(m_sToken, sTimeStamp, sNonce, sEncryptMsg, sMsgSignature);
+            ret = VerifySignature(m_sToken, sTimeStamp, sNonce, sPostData, sMsgSignature);
             if (ret != 0)
                 return ret;
             //decrypt
             string cpid = "";
             try
             {
-                sMsg = Cryptography.AES_decrypt(sEncryptMsg, m_sEncodingAESKey, ref cpid);
+                sMsg = Cryptography.AES_decrypt(sPostData, m_sEncodingAESKey, ref cpid);
             }
             catch (FormatException)
             {

@@ -53,7 +53,8 @@ namespace JCSoft.WX.Framework.Models.Requests
             }
             else
             {
-                throw new ArgumentOutOfRangeException("msg Type can't format");
+                return IsEncryptMessage(xml);
+                //throw new ArgumentOutOfRangeException("msg Type can't format");
             }
         }
 
