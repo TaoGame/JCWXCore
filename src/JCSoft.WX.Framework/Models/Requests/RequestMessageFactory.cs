@@ -62,7 +62,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         {
             if (!String.IsNullOrEmpty(xml.Element("Encrypt").GetValue()))
             {
-                return new EncryptRequestMessage(xml);
+                return new RequestEncryptMessage(xml);
             }
 
             throw new ArgumentOutOfRangeException("msg Type can't format");
