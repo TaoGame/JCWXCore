@@ -75,7 +75,7 @@ namespace JCSoft.WX
             return AES_encrypt(bMsg, Iv, Key);
 
         }
-        private static string CreateRandCode(int codeLen)
+        public static string CreateRandCode(int codeLen)
         {
             string codeSerial = "2,3,4,5,6,7,a,c,d,e,f,h,i,j,k,m,n,p,r,s,t,A,C,D,E,F,G,H,J,K,M,N,P,Q,R,S,U,V,W,X,Y,Z";
             if (codeLen == 0)

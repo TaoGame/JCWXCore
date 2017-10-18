@@ -5,9 +5,9 @@ using System.Xml.Linq;
 
 namespace JCSoft.WX.Framework.Models.Requests
 {
-    public class EncryptRequestMessage : RequestMessage
+    public class RequestEncryptMessage : RequestMessage
     {
-        public EncryptRequestMessage(XElement xml) : base(xml)
+        public RequestEncryptMessage(XElement xml) : base(xml)
         {
             EncryptMessage = xml.Element("Encrypt").GetValue();
         }

@@ -1,6 +1,7 @@
 ﻿using JCSoft.WX.Framework.Extensions;
 using JCSoft.WX.Framework.Models;
 using JCSoft.WX.Framework.Models.Requests;
+using JCSoft.WX.Framework.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
@@ -26,7 +27,19 @@ namespace PassivityRequestMessageDemo.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post([FromBody]RequestMessage request)
+        public ResponseMessage Post([FromBody]RequestMessage request)
+        {
+            return new ResponseTextMessage
+            {
+                FromUserName = "jamesying",
+                ToUserName = "candy",
+                Content = "this is a test!",
+                CreateTime = DateTime.Now.Ticks,
+            };
+        }
+
+        [HttpPut]
+        public JsonResult Put([FromBody]RequestMessage request)
         {
             return Json(request);
         }

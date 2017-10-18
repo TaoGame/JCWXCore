@@ -59,9 +59,9 @@ namespace JCSoft.WX.Mvc.Formatters
                     var inputRequestMessage = RequestMessageFactory.CreateRequestMessage(xmlReader);
 
                     if((_messageMode == MessageMode.Cipher || _messageMode == MessageMode.Compatible) && 
-                        inputRequestMessage is EncryptRequestMessage)
+                        inputRequestMessage is RequestEncryptMessage)
                     {
-                        var encryptMessage = inputRequestMessage as EncryptRequestMessage;
+                        var encryptMessage = inputRequestMessage as RequestEncryptMessage;
                         var plainMessage = String.Empty;
                         var sMsgSignature = context.HttpContext.Request.Query["msg_signature"];
                         var sTimeStamp = context.HttpContext.Request.Query["timestamp"];
@@ -69,8 +69,8 @@ namespace JCSoft.WX.Mvc.Formatters
                         var ret = _crypt.DecryptMsg(sMsgSignature, sTimeStamp, sNonce, encryptMessage.EncryptMessage, ref plainMessage);
                         if(ret == 0)
                         {
-                            using(var stringStream = new MemoryStream(Encoding.UTF8.GetBytes(plainMessage)))
-                            using (var stringReader = XmlReader.Create(stringStream))
+                            using(var stringStream = new MemoryStream(encoding.GetBytes(plainMessage)))
+                            using (var stringReader = CreateXmlReader(stringStream, encoding))
                             {
                                 inputRequestMessage = RequestMessageFactory.CreateRequestMessage(stringReader);
                             }

@@ -35,6 +35,13 @@ namespace PassivityRequestMessageDemo
                         Configuration.GetValue<string>("AppId"),
                         Configuration.GetValue<MessageMode>("MessageMode")
                     ));
+
+                options.OutputFormatters.Add(new WechatXmlSerializerOutputFormatter(
+                        Configuration.GetValue<string>("Token"),
+                        Configuration.GetValue<string>("EncodingAESKey"),
+                        Configuration.GetValue<string>("AppId"),
+                        Configuration.GetValue<MessageMode>("MessageMode")
+                    ));
             });
 
 
