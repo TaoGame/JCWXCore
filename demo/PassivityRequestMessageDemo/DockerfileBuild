@@ -4,10 +4,11 @@ WORKDIR /source
 
 #restore and copying csproj
 #COPY ./*.csproj .
-RUN dotnet restore
+#RUN dotnet restore
 
 #coping code and publish to app
 COPY . .
+RUN dotnet restore
 RUN dotnet publish --output /app/ --configuration Release
 
 FROM microsoft/aspnetcore
