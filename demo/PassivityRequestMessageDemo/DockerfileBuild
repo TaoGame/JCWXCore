@@ -7,7 +7,7 @@ WORKDIR /source
 #RUN dotnet restore
 
 #coping code and publish to app
-COPY Startup.cs  Startup.cs
+COPY ...
 #RUN dotnet restore
 #RUN dotnet publish --output /app/ --configuration Release
 
