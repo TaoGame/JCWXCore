@@ -5,6 +5,6 @@
 #COPY ${source:-obj/Docker/publish} .
 #ENTRYPOINT ["dotnet", "PassivityRequestMessageDemo.dll"]
 FROM centos:7
-COPY startup.cs .
+COPY Startup.cs .
 
 CMD ["bash"]
