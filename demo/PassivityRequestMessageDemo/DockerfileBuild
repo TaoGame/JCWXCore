@@ -14,5 +14,5 @@ COPY Startup.cs  Startup.cs
 FROM microsoft/aspnetcore
 WORKDIR /app
 COPY --from=builder /app .
-#ENTRYPOINT ["dotnet", "PassivityRequestMessageDemo.dll]
+#ENTRYPOINT ["dotnet", "PassivityRequestMessageDemo.dll"]
 
