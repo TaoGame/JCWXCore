@@ -29,11 +29,12 @@ namespace PassivityRequestMessageDemo.Controllers
         [HttpPost]
         public ResponseMessage Post([FromBody]RequestMessage request)
         {
+            var textRequest = request as RequestTextMessage;
             return new ResponseTextMessage
             {
                 FromUserName = "jamesying",
                 ToUserName = "candy",
-                Content = "this is a test!",
+                Content = textRequest?.Content ?? "this is a test!",
                 CreateTime = DateTime.Now.Ticks,
             };
         }
