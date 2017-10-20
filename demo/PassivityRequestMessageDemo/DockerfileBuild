@@ -7,10 +7,10 @@ WORKDIR /source
 #RUN dotnet restore
 
 #coping code and publish to app
-COPY . .
+COPY Startup.cs . 
 #RUN dotnet restore
 #RUN dotnet publish --output /app/ --configuration Release
-RUN ls /source
+#RUN ls /source
 
 #FROM microsoft/aspnetcore
 #WORKDIR /app
