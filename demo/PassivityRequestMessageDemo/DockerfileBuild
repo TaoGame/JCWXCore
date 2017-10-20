@@ -3,7 +3,7 @@ FROM microsoft/aspnetcore-build AS builder
 WORKDIR /source
 
 #restore and copying csproj
-COPY *.csproj .
+COPY ./*.csproj .
 RUN dotnet restore
 
 #coping code and publish to app
