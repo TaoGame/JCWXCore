@@ -7,12 +7,12 @@ WORKDIR /source
 #RUN dotnet restore
 
 #coping code and publish to app
-COPY demo/PassivityRequestMessageDemo/Program.cs .
+COPY Controllers/ .
 #RUN dotnet restore
 #RUN dotnet publish --output /app/ --configuration Release
 
-FROM microsoft/aspnetcore
-WORKDIR /app
-COPY --from=builder /app .
+#FROM microsoft/aspnetcore
+#WORKDIR /app
+#COPY --from=builder /app .
 #ENTRYPOINT ["dotnet", "PassivityRequestMessageDemo.dll"]
 
