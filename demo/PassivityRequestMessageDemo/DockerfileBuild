@@ -7,7 +7,7 @@ COPY *.csproj .
 RUN dotnet restore
 
 #coping code and publish to app
-#COPY Startup.cs /source/Startup.cs
+COPY . .
 #RUN dotnet restore
 RUN dotnet publish --output /app/ --configuration Release
 #RUN ls /source
