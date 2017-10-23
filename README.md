@@ -19,7 +19,8 @@ Token：自主设置的Token
 MessageMode：消息加解密方式 0-明文模式 1-兼容模式 2-安全模式  
 
 ### 文件方式配置:    
-appsettings.json：  
+appsettings.json： 
+```
     {  
         "AppID":"wx000000001",  
         "AppSecret":"appscret",  
@@ -27,5 +28,5 @@ appsettings.json：
         "Token":"123asdf",  
         "MessageMode":2 //安全模式  
     }
-
+```
 
