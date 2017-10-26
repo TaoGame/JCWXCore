@@ -8,7 +8,7 @@ using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
-    public class CustomservicesKfaccountDelRequest : ApiRequest<DefaultResponse>
+    public class CustomserviceKfaccountDelRequest : ApiRequest<DefaultResponse>
     {
         /// <summary>
         /// 完整客服账号，格式为：账号前缀@公众号微信号

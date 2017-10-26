@@ -61,5 +61,8 @@ namespace JCSoft.WX.Framework.Models
         /// 客服账号登录密码，格式为密码明文的32位加密MD5值
         /// </summary>
         public string Password { get; set; }
+
+        [JsonProperty("media", NullValueHandling = NullValueHandling.Ignore)]
+        public string Media { get; set; }
     }
 }

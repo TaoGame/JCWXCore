@@ -16,9 +16,32 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         [JsonProperty("msgtype")]
         public abstract string MsgType { get; }
 
+        [JsonIgnore]
+        public string KfAccount { get; set; }
+
         internal override HttpRequestActionType Method
         {
             get { return HttpRequestActionType.Content; }
+        }
+
+        [JsonProperty("customservice", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomAccount CustomerService
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(KfAccount))
+                {
+                    return new CustomAccount
+                    {
+                        Account = KfAccount
+                    };
+                }
+
+                return null;
+            }
+            set
+            {
+            }
         }
 
         protected override string UrlFormat
