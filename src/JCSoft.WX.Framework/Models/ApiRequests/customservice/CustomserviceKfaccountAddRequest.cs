@@ -45,7 +45,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override bool NeedToken
         {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
 
         internal override string GetPostContent()

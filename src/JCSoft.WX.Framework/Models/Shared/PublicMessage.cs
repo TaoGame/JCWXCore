@@ -17,6 +17,9 @@ namespace JCSoft.WX.Framework.Models
         public string MediaId { get; set; }
     }
 
+    /// <summary>
+    /// 音乐消息
+    /// </summary>
     public class MusicMessage
     {
         [JsonProperty("title",
@@ -37,6 +40,30 @@ namespace JCSoft.WX.Framework.Models
 
         [JsonProperty("hqmusicurl")]
         public string HQMusicUrl { get; set; }
+
+        [JsonProperty("thumb_media_id")]
+        public string ThumbMediaId { get; set; }
+    }
+
+    /// <summary>
+    /// 卡券消息
+    /// </summary>
+    public class CardMessage
+    {
+        [JsonProperty("card_id")]
+        public string CardId { get; set; }
+    }
+
+    public class MiniProgramPage
+    {
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [JsonProperty("appid")]
+        public string Appid { get; set; }
+
+        [JsonProperty("pagepath")]
+        public string PagePath { get; set; }
 
         [JsonProperty("thumb_media_id")]
         public string ThumbMediaId { get; set; }
