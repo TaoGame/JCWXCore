@@ -8,6 +8,9 @@ using JCSoft.Core.Net.Http;
 
 namespace JCSoft.WX.Framework.Models.ApiRequests
 {
+    /// <summary>
+    /// 上传图文消息素材【订阅号与服务号认证后均可用】
+    /// </summary>
     public class MediaUploadNewsRequest : ApiRequest<MediaUploadNewsResponse>
     {
         [JsonProperty("articles")]
