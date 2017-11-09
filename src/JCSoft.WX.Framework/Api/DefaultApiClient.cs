@@ -15,9 +15,10 @@ namespace JCSoft.WX.Framework.Api
         private readonly ILogger Logger;
         private readonly IHttpFactory _factory;
 
+
         public DefaultApiClient(ILoggerFactory loggerFactory, IHttpFactory factory)
         {
-            Logger = loggerFactory.CreateLogger<DefaultApiClient>();
+            Logger = loggerFactory?.CreateLogger<DefaultApiClient>();
             _factory = factory;
         }
 
@@ -36,39 +37,32 @@ namespace JCSoft.WX.Framework.Api
             }
             catch (Exception ex)
             {
-                
+
                 if (request.NotHasResponse)
                 {
                     return new T();
                 }
 
-                Logger.LogError(ex.ToString());
+                Logger?.LogError(ex.ToString());
                 throw new WXApiException(WXErrorCode.GetResponseFaild, ex.ToString());
             }
         }
 
-        public virtual async Task<string> DoExecute<T>(ApiRequest<T> request) 
+        public virtual async Task<string> DoExecute<T>(ApiRequest<T> request)
             where T : ApiResponse
         {
             try
             {
                 var url = request.GetUrl();
                 var result = String.Empty;
-                HttpAbstraction http = null;
-                switch (request.Method)
+                HttpAbstraction http = _factory.CreateHttp(request.Method);
+
+
+                if (request.Method == HttpRequestActionType.Get)
                 {
-                    case "FILE":
-                        http = _factory.CreateHttp(HttpRequestActionType.File);
-                        break;
-                    case "POST":
-                        http = _factory.CreateHttp(HttpRequestActionType.Content);
-                        break;
-                    case "GET":
-                        http = _factory.CreateHttp(HttpRequestActionType.Get);
-                        break;
-                    case "XML":
-                        http = _factory.CreateHttp(HttpRequestActionType.Xml);
-                        break;
+                    return await http.Setup()
+                    .SetUrl(url)
+                    .GetResponseAsync();
                 }
 
                 return await http.Setup()

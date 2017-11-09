@@ -10,9 +10,11 @@ namespace DemoWeb.Pages
         public IndexModel(IMemoryCache cache, IApiClient client) : base(cache, client)
         {
         }
+        
 
-        public string Message { get; set; }
-       
+        public override int Index => -1;
+
+        public override int SubIndex => 1;
 
         public void OnGet()
         {

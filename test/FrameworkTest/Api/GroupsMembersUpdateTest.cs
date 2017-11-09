@@ -11,31 +11,7 @@ namespace FrameworkCoreTest
 {
     public class GroupsMembersUpdateTest : MockPostApiBaseTest<GroupsMembersUpdateRequest, GroupsMembersUpdateResponse>
     {
-        [Fact]
-        public void GroupsMembersUpdateJsonTest()
-        {
-            Console.WriteLine(Request.GetPostContent());
-        }
-
-        [Fact]
-        public void MockGroupsMemberUpdateTest()
-        {
-            MockSetup(false);
-            var response = mock_client.Object.Execute(Request);
-            Assert.Equal(0, response.ErrorCode);
-            Assert.Equal("ok", response.ErrorMessage);
-            Assert.Equal(false, response.IsError);
-        }
-
-        [Fact]
-        public void MockGroupsMemberUpdateErrorTest()
-        {
-            MockSetup(true);
-            var response = mock_client.Object.Execute(Request);
-            Assert.Equal(40013, response.ErrorCode);
-            Assert.Equal("invalid appid", response.ErrorMessage);
-            Assert.Equal(true, response.IsError);
-        }
+       
 
         protected override GroupsMembersUpdateRequest InitRequestObject()
         {

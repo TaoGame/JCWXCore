@@ -9,11 +9,7 @@ namespace FrameworkCoreTest
 {
     public class MediaUploadNewsTest : MockPostApiBaseTest<MediaUploadNewsRequest, MediaUploadNewsResponse>
     {
-        [Fact]
-        public void MediaUploadNewsPostContentTest()
-        {
-            Console.WriteLine(Request.GetPostContent());
-        }
+
 
         [Fact]
         public void MockMediaUploadNewsTest()

@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /demo/DemoWeb/out
 /demo/DemoWeb/Properties/PublishProfiles
+/demo/PassivityRequestMessageDemo/Properties/PublishProfiles/FolderProfile.pubxml

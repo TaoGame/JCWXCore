@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  passivityrequestmessagedemo:
+    image: passivityrequestmessagedemo
+    build:
+      context: ./demo/PassivityRequestMessageDemo
+      dockerfile: Dockerfile

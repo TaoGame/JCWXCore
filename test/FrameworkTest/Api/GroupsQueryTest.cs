@@ -55,7 +55,7 @@ namespace FrameworkCoreTest
                 }
             ]
         }";
-            mock_client.Setup(d => d.DoExecute(request)).Returns(new Task<string>(() => doresult));
+            //mock_client.Setup(d => d.Execute(request)).Returns(new Task<string>(() => doresult));
             var response = mock_client.Object.Execute(request);
             foreach (var group in response.Groups)
             {

@@ -1,0 +1,27 @@
+﻿@page
+@model CustomMenuQueryModel
+@{
+    ViewData["Title"] = "自定义菜单查询";
+}
+<div class="row-fluid">
+    <h3 class="page-title">@ViewData["Title"]</h3>
+</div>
+<div class="row-fluid">
+    @Html.Partial("~/Pages/Partials/CodePartail.cshtml", new DemoWeb.Pages.Partials.CodePartailModel
+{
+    Index = 1,
+    IsActive = true,
+    ShowTestButtons = true,
+    Api = "/api/menuquery",
+    Code = () =>
+    {
+        return @"
+var request = new MenuGetRequest
+{
+    AccessToken = AccessToken
+};
+
+var response = _clientExecute(request);";
+    }
+})
+</div>
