@@ -20,7 +20,7 @@ namespace DemoWeb
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls(new string[] { "http://localhost:60000" })
+                .UseUrls(new string[] { "http://*:50003" })
                 .Build();
     }
 }
