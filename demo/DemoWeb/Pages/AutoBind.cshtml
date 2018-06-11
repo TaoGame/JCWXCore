@@ -1,0 +1,22 @@
+﻿@page
+@model DemoWeb.Pages.AutoBindModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AutoBind</title>
+</head>
+<body>
+    @Html.LabelFor(c => c.AccessTokenCode.Access_Token)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.ErrorCode)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.ErrorMessage)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.Expires_in)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.OpenId)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.Refresh_token)<br />
+</body>
+</html>
