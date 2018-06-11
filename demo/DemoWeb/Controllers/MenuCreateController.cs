@@ -33,7 +33,7 @@ namespace DemoWeb.Controllers
                     new ClickButton
                     {
                         Type = ClickButtonType.view,
-                        Url = "http://inday.cnblogs.com",
+                        Url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdc3ee459a9b8f109&redirect_uri=http://dm.wxquickframework.com/AutoBind&response_type=code&scope=snsapi_base#wechat_redirect",
                         Name = "我的博客"
                     },
                     new ClickButton

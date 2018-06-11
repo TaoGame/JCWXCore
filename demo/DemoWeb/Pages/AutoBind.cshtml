@@ -12,11 +12,11 @@
     <title>AutoBind</title>
 </head>
 <body>
-    @Html.LabelFor(c => c.AccessTokenCode.Access_Token)<br />
-    @Html.LabelFor(c => c.AccessTokenCode.ErrorCode)<br />
-    @Html.LabelFor(c => c.AccessTokenCode.ErrorMessage)<br />
-    @Html.LabelFor(c => c.AccessTokenCode.Expires_in)<br />
-    @Html.LabelFor(c => c.AccessTokenCode.OpenId)<br />
-    @Html.LabelFor(c => c.AccessTokenCode.Refresh_token)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.Access_Token) :@Html.TextBoxFor(c => c.AccessTokenCode.Access_Token)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.ErrorCode):@Html.TextBoxFor(c => c.AccessTokenCode.ErrorCode)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.ErrorMessage):@Html.TextBoxFor(c => c.AccessTokenCode.ErrorMessage)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.Expires_in):@Html.TextBoxFor(c => c.AccessTokenCode.Expires_in)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.OpenId):@Html.TextBoxFor(c => c.AccessTokenCode.OpenId)<br />
+    @Html.LabelFor(c => c.AccessTokenCode.Refresh_token):@Html.TextBoxFor(c => c.AccessTokenCode.Refresh_token)<br />
 </body>
 </html>
