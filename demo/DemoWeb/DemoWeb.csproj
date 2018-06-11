@@ -3,6 +3,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="JCSoft.WX.Framework" Version="5.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
@@ -11,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj" />
-    <ProjectReference Include="..\..\src\JCSoft.WX.Mvc.Cores\JCSoft.WX.Mvc.Cores.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Codes\Filters\" />
