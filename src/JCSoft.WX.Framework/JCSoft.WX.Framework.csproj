@@ -4,17 +4,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>james@taogame.com</Copyright>
-    <Version>5.2.2</Version>
+    <Version>1.0.0.0</Version>
     <Authors>James YinG</Authors>
     <Company>JCSoft.XYZ</Company>
     <Product>Wechat MP QuickFramework</Product>
     <PackageProjectUrl>http://www.wxquickframework.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JamesYing/JCWXCore</RepositoryUrl>
-    <AssemblyVersion>5.2.0.1</AssemblyVersion>
-    <FileVersion>5.2.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
     <Description>微信公众号快速开发框架（WX MP QuickFramework) Net Core 2.0版本</Description>
     <PackageReleaseNotes>support .Net Standard 2.0</PackageReleaseNotes>
     <RepositoryType>github</RepositoryType>
+    <PackageLicenseUrl>https://github.com/JamesYing/JCWXCore/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>JCSoft.WechatMP.FrameworkCore</PackageId>
+    <PackageIconUrl>https://github.com/JamesYing/JCWXCore/blob/master/wxpplog.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
