@@ -12,7 +12,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         public string AppId { get; set; }
         public string AppSecret { get; set; }
 
-        protected override string UrlFormat => "https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code";
+        protected override string UrlFormat => "/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code";
 
         protected override bool NeedToken => false;
 

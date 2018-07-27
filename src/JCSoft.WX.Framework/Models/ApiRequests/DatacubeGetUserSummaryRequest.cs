@@ -29,7 +29,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/datacube/getusersummary?access_token={0}"; }
+            get { return "/datacube/getusersummary?access_token={0}"; }
         }
 
         internal override string GetUrl()

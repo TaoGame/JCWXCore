@@ -28,7 +28,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/customservice/kfacount/uploadheadimg?access_token={0}&kf_account={1}"; }
+            get { return "/customservice/kfacount/uploadheadimg?access_token={0}&kf_account={1}"; }
         }
 
         internal override string GetUrl()

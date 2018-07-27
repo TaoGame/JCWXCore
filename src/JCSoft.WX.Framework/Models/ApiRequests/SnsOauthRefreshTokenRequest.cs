@@ -20,7 +20,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid={0}&grant_type=refresh_token&refresh_token={1}"; }
+            get { return "/sns/oauth2/refresh_token?appid={0}&grant_type=refresh_token&refresh_token={1}"; }
         }
 
         internal override string GetUrl()

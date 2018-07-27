@@ -12,7 +12,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
     {
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/datacube/getupstreammsghour?access_token={0}"; }
+            get { return "/datacube/getupstreammsghour?access_token={0}"; }
         }
     }
 }

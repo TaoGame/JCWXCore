@@ -12,7 +12,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/customservice/kfsession/getsessionlist?access_token={0}&kf_account={1}"; }
+            get { return "/customservice/kfsession/getsessionlist?access_token={0}&kf_account={1}"; }
         }
 
         internal override string GetUrl()

@@ -17,7 +17,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/merchant/common/upload_img?access_token={0}&filename={1}"; }
+            get { return "/merchant/common/upload_img?access_token={0}&filename={1}"; }
         }
 
         internal override string GetUrl()

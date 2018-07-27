@@ -23,7 +23,7 @@ namespace JCSoft.WX.Framework.Models.Miniapp.Requests
         /// </summary>
         public string Code { get; set; }    
         internal override HttpRequestActionType Method { get; } = HttpRequestActionType.Content;
-        protected override string UrlFormat { get; } = "https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code";
+        protected override string UrlFormat { get; } = "/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code";
         internal override string GetUrl()
         {
              return String.Format(UrlFormat, AppId, AppSecret, Code );

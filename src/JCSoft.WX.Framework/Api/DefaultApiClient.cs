@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using JCSoft.WX.Framework.Extensions;
+using Microsoft.Extensions.Options;
 
 namespace JCSoft.WX.Framework.Api
 {
@@ -14,12 +16,14 @@ namespace JCSoft.WX.Framework.Api
     {
         private readonly ILogger Logger;
         private readonly IHttpFactory _factory;
+        private readonly WXOptions _options;
 
 
-        public DefaultApiClient(ILoggerFactory loggerFactory, IHttpFactory factory)
+        public DefaultApiClient(ILoggerFactory loggerFactory, IHttpFactory factory, IOptions<WXOptions> options)
         {
             Logger = loggerFactory?.CreateLogger<DefaultApiClient>();
             _factory = factory;
+            _options = options.Value;
         }
 
         public T Execute<T>(ApiRequest<T> request)
@@ -53,7 +57,8 @@ namespace JCSoft.WX.Framework.Api
         {
             try
             {
-                var url = request.GetUrl();
+
+                var url = $"{_options.ApiUrl}{request.GetUrl()}";
                 var result = String.Empty;
                 HttpAbstraction http = _factory.CreateHttp(request.Method);
 

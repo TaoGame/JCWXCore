@@ -20,7 +20,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang={2}"; }
+            get { return "/cgi-bin/user/info?access_token={0}&openid={1}&lang={2}"; }
         }
 
         internal override string GetUrl()

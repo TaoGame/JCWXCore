@@ -46,7 +46,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token={0}"; }
+            get { return "/cgi-bin/qrcode/create?access_token={0}"; }
         }
 
         internal override string GetUrl()

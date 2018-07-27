@@ -18,7 +18,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         internal override HttpRequestActionType Method => HttpRequestActionType.Content;
 
-        protected override string UrlFormat => "https://api.weixin.qq.com/cgi-bin/menu/addconditional?access_token={0}";
+        protected override string UrlFormat => "/cgi-bin/menu/addconditional?access_token={0}";
 
         protected override bool NeedToken => true;
 

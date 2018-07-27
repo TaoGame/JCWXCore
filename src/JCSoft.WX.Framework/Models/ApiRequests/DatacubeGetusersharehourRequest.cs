@@ -11,7 +11,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         {
             get
             {
-                return "https://api.weixin.qq.com/datacube/getusersharehour?access_token={0}";
+                return "/datacube/getusersharehour?access_token={0}";
             }
         }
     }

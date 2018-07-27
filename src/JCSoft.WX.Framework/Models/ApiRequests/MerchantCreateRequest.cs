@@ -19,7 +19,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/merchant/create?access_token={0}"; }
+            get { return "/merchant/create?access_token={0}"; }
         }
 
         internal override string GetUrl()

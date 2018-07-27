@@ -23,7 +23,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/customservice/kfaccount/del?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT"; }
+            get { return "/customservice/kfaccount/del?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT"; }
         }
 
         internal override string GetUrl()

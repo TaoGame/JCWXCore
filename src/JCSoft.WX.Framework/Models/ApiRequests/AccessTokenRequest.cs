@@ -22,7 +22,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
 
         protected override string UrlFormat
         {
-            get { return "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}"; }
+            get { return "/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}"; }
         }
 
         internal override string GetUrl()

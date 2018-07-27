@@ -15,6 +15,7 @@ namespace JCSoft.WX.Framework.Extensions
         public MessageMode MessageMode { get; set; }
 
         public string EncodingAESKey { get; set; }
+        public string ApiUrl { get; set; } = "https://api.weixin.qq.com";
     }
 
     public enum MessageMode

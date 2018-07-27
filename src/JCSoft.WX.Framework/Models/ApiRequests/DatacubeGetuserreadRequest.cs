@@ -14,7 +14,7 @@ namespace JCSoft.WX.Framework.Models.ApiRequests
         {
             get
             {
-                return "https://api.weixin.qq.com/datacube/getuserread?access_token={0}";
+                return "/datacube/getuserread?access_token={0}";
             }
         }
     }
