@@ -58,7 +58,7 @@ namespace JCSoft.WX.Framework.Api
             try
             {
 
-                var url = $"{_options.ApiUrl}{request.GetUrl()}";
+                var url = $"{_options.ApiUrl.TrimEnd('/')}{request.GetUrl()}";
                 var result = String.Empty;
                 HttpAbstraction http = _factory.CreateHttp(request.Method);
 
