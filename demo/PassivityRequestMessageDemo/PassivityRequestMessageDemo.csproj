@@ -13,12 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JCSoft.WX.Mvc.Cores" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj" />
+    <ProjectReference Include="..\..\src\JCSoft.WX.Mvc.Cores\JCSoft.WX.Mvc.Cores.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>

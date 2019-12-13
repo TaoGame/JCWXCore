@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>james@taogame.com</Copyright>
-    <Version>1.0.1.0</Version>
+    <Version>1.0.1.1</Version>
     <Authors>James YinG</Authors>
     <Company>JCSoft.XYZ</Company>
     <Product>Wechat MP QuickFramework</Product>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -27,6 +28,7 @@ namespace JCSoft.WX.Framework.Models.Requests
         public string Content { get; set; }
 
         [XmlElement("Content")]
+        [JsonIgnore]
         public XmlCDataSection CContent
         {
             get

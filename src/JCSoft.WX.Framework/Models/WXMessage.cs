@@ -14,6 +14,7 @@ namespace JCSoft.WX.Framework.Models
         protected XmlDocument doc = new XmlDocument();
 
         [XmlElement("FromUserName")]
+        [JsonIgnore]
         public XmlCDataSection CFromUserName
         {
             get
@@ -27,6 +28,7 @@ namespace JCSoft.WX.Framework.Models
         }
 
         [XmlElement("MsgType")]
+        [JsonIgnore]
         public XmlCDataSection CMsgType
         {
             get
@@ -40,6 +42,7 @@ namespace JCSoft.WX.Framework.Models
         public long CreateTime { get; set; }
 
         [XmlElement("ToUserName")]
+        [JsonIgnore]
         public XmlCDataSection CToUserName
         {
             get

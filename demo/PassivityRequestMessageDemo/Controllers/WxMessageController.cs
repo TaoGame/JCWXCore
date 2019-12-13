@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,21 +26,19 @@ namespace PassivityRequestMessageDemo.Controllers
         }
 
         [HttpGet]
-        public JsonResult Get()
+        [Produces("text/plain")]
+        public string Get(string echostr, string signature, string timestamp)
         {
-            return Json(wXOptions);
+            return echostr;
         }
 
         [HttpPost]
         public ResponseMessage Post([FromBody]RequestMessage request)
         {
             var textRequest = request as RequestTextMessage;
-            var response = new ResponseTextMessage
+            var response = new ResponseTextMessage(textRequest)
             {
-                FromUserName = "jamesying",
-                ToUserName = "candy",
-                Content = textRequest?.Content ?? "this is a test!",
-                CreateTime = DateTime.Now.Ticks,
+                Content = textRequest?.Content
             };
 
             _logger.LogInformation("[Recive a Message]\r\n request is :{0} \r\n response:{1}", 

@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\JCSoft.WX.Framework\JCSoft.WX.Framework.csproj" />
+    <ProjectReference Include="..\..\src\JCSoft.WX.Mvc.Cores\JCSoft.WX.Mvc.Cores.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Codes\Filters\" />
